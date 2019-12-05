@@ -17,12 +17,12 @@ HDAPI is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'HDAPI'
+pod 'HDAPI', :git => 'https://github.com/anhlahieupro/HDAPI'
 ```
 
 ## Author
 
-anhlahieupro, dinhhieudev@gmail.com
+anhlahieupro, anhlahieupro@gmail.com
 
 ## License
 
