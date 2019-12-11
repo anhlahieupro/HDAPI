@@ -12,7 +12,19 @@ public extension HDApiRequest {
                  parameters: [String: Any] = [:],
                  headers: HTTPHeaders = HDApiPath.headers,
                  completionHandler: @escaping (_ json: [String: Any]?) -> ()) {
-        guard let url = URL(string: HDApiPath.base + path) else { return }
+        request(url: HDApiPath.base + path,
+                method: method,
+                parameters: parameters,
+                headers: headers,
+                completionHandler: completionHandler)
+    }
+    
+    func request(url: String,
+                 method: HTTPMethod,
+                 parameters: [String: Any] = [:],
+                 headers: HTTPHeaders = HDApiPath.headers,
+                 completionHandler: @escaping (_ json: [String: Any]?) -> ()) {
+        guard let url = URL(string: url) else { return }
         let encoding: ParameterEncoding = (method == .get ? URLEncoding.queryString : JSONEncoding.default)
         Alamofire.request(url,
                           method: method,

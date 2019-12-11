@@ -22,8 +22,8 @@ public extension HDApiRequest {
                             "lat,lon,timezone,currency",
                             "isp,org,as,asname,reverse",
                             "mobile,proxy,query")
-        HDApiPath.base = "http://ip-api.com/json/"
-        request(path: IPAdress + "?" + lang + "&" + fields, method: .get) { (json) in
+        let url = "http://ip-api.com/json/" + IPAdress + "?" + lang + "&" + fields
+        request(url: url, method: .get) { (json) in
             let response = Mapper<GeolocationResponse>().map(JSON: json ?? [:])
             completionHandler(response)
         }
