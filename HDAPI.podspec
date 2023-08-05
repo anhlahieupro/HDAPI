@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HDAPI'
-  s.version          = '10.0'
+  s.version          = '10.1'
   s.summary          = 'HDAPI - anhlahieupro'
 
 # This description is used to generate tags and improve search results.
@@ -37,7 +37,7 @@ TODO: Add long description of the pod here.
   }
 
   s.frameworks = 'UIKit', 'Foundation', 'Alamofire', 'ObjectMapper'
-  s.dependency 'Alamofire'
+  s.dependency 'Alamofire', '4.9.1'
   s.dependency 'ObjectMapper'
 
   s.static_framework = true
